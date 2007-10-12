@@ -3,3 +3,8 @@ Revision history for Rose-DBx-TestDB
 0.01    7 Oct 2007
         First version, released on an unsuspecting world.
 
+0.02    11 Oct 2007
+        Updated Makefile.PL to list all reqs
+
+       
+
