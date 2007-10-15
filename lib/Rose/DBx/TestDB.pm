@@ -6,7 +6,7 @@ use File::Temp 'tempfile';
 use Rose::DB;
 use Carp;
 
-our $VERSION = '0.04';
+our $VERSION = '0.03';
 
 my @TMPFILES;
 
