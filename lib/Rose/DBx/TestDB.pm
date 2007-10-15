@@ -1,14 +1,12 @@
 package Rose::DBx::TestDB;
 
-# inspired by DBICx::TestDatabase
-
 use warnings;
 use strict;
 use File::Temp 'tempfile';
 use Rose::DB;
 use Carp;
 
-our $VERSION = '0.02';
+our $VERSION = '0.04';
 
 my @TMPFILES;
 
@@ -117,6 +115,8 @@ L<http://search.cpan.org/dist/Rose-DBx-TestDB>
 =back
 
 =head1 ACKNOWLEDGEMENTS
+
+Inspired by DBICx::TestDatabase.
 
 =head1 COPYRIGHT & LICENSE
 
