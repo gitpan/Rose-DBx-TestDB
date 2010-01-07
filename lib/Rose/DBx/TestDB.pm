@@ -6,7 +6,10 @@ use File::Temp 'tempfile';
 use Rose::DB;
 use Carp;
 
-our $VERSION = '0.03';
+# we want our END to run no matter what (even if ^C)
+use sigtrap qw(die normal-signals error-signals);
+
+our $VERSION = '0.05';
 
 my @TMPFILES;
 
@@ -38,8 +41,10 @@ sub new {
         post_connect_sql =>
             [ 'PRAGMA synchronous = OFF', 'PRAGMA temp_store = MEMORY', ],
     );
+    Rose::DB->default_domain('test');
+    Rose::DB->default_type('sqlite');
 
-    my $db = Rose::DB->new( type => 'sqlite', domain => 'test' )
+    my $db = Rose::DB->new()
         or croak "could not create new Rose::DB instance: $!";
 
     return $db;
